@@ -5,6 +5,8 @@ secret-id="$1"
 lambda="$2"
 cron_expr="$3"
 
+aws sts get-caller-identity --query "Account" --output text
+
 echo "Secret Rotation started.."
 aws secretsmanager rotate-secret --secret-id ${secret-id} --rotation-lambda-arn ${lambda} --rotate-immediately
 	
