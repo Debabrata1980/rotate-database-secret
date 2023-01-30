@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Deploy the template using the SAM CLI
-secret_id="$1"
-lambda_arn="$2"
+secret-id="$1"
+lambda="$2"
 cron_expr="$3"
 
 echo "Secret Rotation started.."
