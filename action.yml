@@ -2,7 +2,7 @@ name: 'Secret Rptation configuration'
 description: 'Secret Rotation Configuration'
 
 inputs:
-  secret:
+  secret-id:
     description: 'Secretid'
     required: true
   lambda:
@@ -17,5 +17,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.secret }}
+    - ${{ inputs.secret-id }}
     - ${{ inputs.lambda }}
