@@ -1,0 +1,21 @@
+name: 'Secret Rptation configuration'
+description: 'Secret Rotation Configuration'
+
+inputs:
+  secret:
+    description: 'Secretid'
+    required: true
+  lambda:
+    description: 'lambda arn'
+    required: true
+    default: 'arn:aws:lambda:us-east-1:273641968769:function:mysql-rotate-lambda'
+  cron:
+    description: 'Cron expr'
+    required: false
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.secret }}
+    - ${{ inputs.lambda }}
