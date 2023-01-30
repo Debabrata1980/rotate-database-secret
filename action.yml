@@ -5,6 +5,7 @@ inputs:
   secret-id:
     description: 'Secretid'
     required: true
+    default: 'Testsecret'
   lambda:
     description: 'lambda arn'
     required: true
